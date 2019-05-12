@@ -30,12 +30,10 @@ def lambda_handler(event, context):
         publish_message(outbound_message, SMS_TOPIC_ARN)
     else:
         if message_content == '0':
-            text_message = ("A Deep Learning application that estimates the "
-                            "Shake Shack line using the live streaming "
-                            "located at Madison Square Park. The application "
-                            "is based on a decoupled microservice "
-                            "architecture implemented using AWS ECS, Lambda, "
-                            "SNS and Twilio SMS.")
+            text_message = ("A Deep Learning application that estimates the Shake Shack line "
+                            "using the live stream camera located at Madison Square Park. The "
+                            "application uses a decoupled microservice architecture "
+                            "implemented using AWS ECS, AWS Lambda, AWS SNS, and Twilio.")
             outbound_message['body'] = text_message
             publish_message(outbound_message, SMS_TOPIC_ARN)
         else == '1':
